@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "630744660718",
+    "firebase_url": "https://mapsexp-32d5c.firebaseio.com",
+    "project_id": "mapsexp-32d5c",
+    "storage_bucket": "mapsexp-32d5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630744660718:android:ef9bdfe695793d22",
+        "android_client_info": {
+          "package_name": "com.androidtutorialpoint.googlemapsretrofit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630744660718-eph5e45dvoonctbkern2klenaai7h1iv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidtutorialpoint.googlemapsretrofit",
+            "certificate_hash": "8c483c2e57776d2699977fb29b1a1067bfd4439e"
+          }
+        },
+        {
+          "client_id": "630744660718-j1cqmrjc49ju9qbbte50aonb7ula0iv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBscNdMuHKMKKmPpNTlVpr5ZRdh35cpYk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630744660718-j1cqmrjc49ju9qbbte50aonb7ula0iv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630744660718:android:cb3bfd9b5f2db436",
+        "android_client_info": {
+          "package_name": "com.example.looser43.androidx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630744660718-il4j46e6g2gltmgkhahnm8t8evkpkm2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.looser43.androidx",
+            "certificate_hash": "20512a4327b8d37dc387f663f108371707e9297a"
+          }
+        },
+        {
+          "client_id": "630744660718-j1cqmrjc49ju9qbbte50aonb7ula0iv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBscNdMuHKMKKmPpNTlVpr5ZRdh35cpYk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630744660718-j1cqmrjc49ju9qbbte50aonb7ula0iv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
