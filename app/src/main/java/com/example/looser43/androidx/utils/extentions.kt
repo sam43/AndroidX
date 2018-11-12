@@ -1,4 +1,4 @@
-package com.example.looser43.androidx
+package com.example.looser43.androidx.utils
 
 import android.app.Activity
 import android.content.Context

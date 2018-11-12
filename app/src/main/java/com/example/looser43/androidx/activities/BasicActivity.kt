@@ -1,8 +1,10 @@
-package com.example.looser43.androidx
+package com.example.looser43.androidx.activities
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.looser43.androidx.R
+import com.example.looser43.androidx.utils.sendToAnalytics
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_basic.*

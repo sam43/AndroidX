@@ -1,7 +1,8 @@
-package com.example.looser43.androidx
+package com.example.looser43.androidx.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.looser43.androidx.R
 
 class MainActivity : AppCompatActivity() {
 
