@@ -3,11 +3,16 @@ package com.example.looser43.androidx
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
+import com.google.firebase.analytics.FirebaseAnalytics
 
 fun Any.toast(context: Context): Toast {
-    return Toast.makeText(context, this.toString(), Toast.LENGTH_SHORT).apply { show() }
+    val toast = Toast.makeText(context, this.toString(), Toast.LENGTH_SHORT)
+    toast.setGravity(Gravity.BOTTOM, 0, 600)
+    toast.show()
+    return toast
 }
 
 fun Activity.sendToAnalytics(analytics: FirebaseAnalytics, view: String) {

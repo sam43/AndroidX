@@ -2,6 +2,7 @@ package com.example.looser43.androidx
 
 import android.app.Activity
 import android.os.Bundle
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class Utils {
     companion object {

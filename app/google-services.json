@@ -67,6 +67,14 @@
           }
         },
         {
+          "client_id": "630744660718-72487o5oe7caupvp74l72jqltirafpgq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.looser43.androidx",
+            "certificate_hash": "32bc7dfdef98c2bea5d62ed4d7e90453d231694e"
+          }
+        },
+        {
           "client_id": "630744660718-j1cqmrjc49ju9qbbte50aonb7ula0iv2.apps.googleusercontent.com",
           "client_type": 3
         }
