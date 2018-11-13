@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.looser43.androidx.R
+import com.example.looser43.androidx.utils.disableScrollbar
 import com.example.looser43.androidx.utils.toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_bottomsheet.*
+
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
 
@@ -17,7 +21,10 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        Glide.with(activity!!).load(R.drawable.amandacernypro)
+                .apply(RequestOptions.circleCropTransform())
+                .into(imageView)
+        disableScrollbar(navigation_view)
         navigation_view.setNavigationItemSelectedListener { menuItem ->
             // Bottom Navigation Drawer menu item clicks
             when (menuItem.itemId) {
@@ -29,5 +36,10 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
             }
             true
         }
+
+        close_imageview.setOnClickListener {
+            dismiss()
+        }
+
     }
 }

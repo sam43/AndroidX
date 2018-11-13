@@ -1,11 +1,16 @@
 package com.example.looser43.androidx.utils
 
+import android.animation.ValueAnimator
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.view.animation.Animation
 import android.widget.Toast
+import com.google.android.material.internal.NavigationMenuView
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
 
 fun Any.toast(context: Context): Toast {
@@ -32,4 +37,30 @@ fun View.invisible() {
 
 fun View.visible() {
     visibility = View.VISIBLE
+}
+
+fun disableScrollbar(navigationView: NavigationView) {
+    val navigationMenuView = navigationView.getChildAt(0) as NavigationMenuView
+    navigationMenuView.isVerticalScrollBarEnabled = false
+}
+
+fun animateTest(view: View) {
+    val anim = ValueAnimator.ofFloat(0F, 1F)
+    anim.duration = 2000
+
+    val hsv = FloatArray(3)
+    var runColor: Int
+    // Transition color
+    hsv[1] = 1f
+    hsv[2] = 1f
+    anim.addUpdateListener { animation ->
+        hsv[0] = 360 * animation.animatedFraction
+
+        runColor = Color.HSVToColor(hsv)
+        view.setBackgroundColor(runColor)
+    }
+
+    anim.repeatCount = Animation.INFINITE
+
+    anim.start()
 }

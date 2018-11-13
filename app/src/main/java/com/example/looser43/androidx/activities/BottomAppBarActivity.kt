@@ -15,28 +15,42 @@ import com.example.looser43.androidx.utils.toast
 import com.google.android.material.bottomappbar.BottomAppBar
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
 
+
 class BottomAppBarActivity : AppCompatActivity() {
 
     private var switched: Boolean = false
+    private var first: Boolean = false
     private lateinit var fabOpen: Animation
     private lateinit var fabClose: Animation
+    private lateinit var fabFade: Animation
+    private lateinit var fabFadeO: Animation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        first = true
         setContentView(R.layout.activity_bottom_app_bar)
         fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_show)
         fabClose = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_hide)
+        fabFade = AnimationUtils.loadAnimation(applicationContext, android.R.anim.fade_in)
+        fabFadeO = AnimationUtils.loadAnimation(applicationContext, android.R.anim.fade_out)
         sw_toggle.setOnCheckedChangeListener { _, isChecked ->
             switched = isChecked
-            this.overridePendingTransition(android.R.anim.fade_in,
-                    android.R.anim.fade_out)
+            bottom_app_bar?.startAnimation(fabFadeO)
             setupBottomNavigation()
         }
-
+        if (first) {
+            first = false
+            setupBottomNavigation()
+            bottom_app_bar.setNavigationOnClickListener {
+                val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
+                bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+            }
+        }
     }
 
     private fun setupBottomNavigation() {
         if (!switched) {
             fab?.startAnimation(fabOpen)
+            bottom_app_bar?.startAnimation(fabFade)
             bottom_app_bar.navigationIcon = ContextCompat.getDrawable(this, ic_menu_white_24dp)
             bottom_app_bar.replaceMenu(bottom_menu_search)
             // Move FAB from the center of BottomAppBar to the end of it
@@ -45,9 +59,12 @@ class BottomAppBarActivity : AppCompatActivity() {
             fab?.backgroundTintList = (ColorStateList.valueOf(ContextCompat.getColor(this@BottomAppBarActivity, android.R.color.white)))
             fab?.setImageResource(ic_add_24dp)
             fab?.rippleColor = ContextCompat.getColor(this@BottomAppBarActivity, R.color.colorAccent)
+            // Fab onClick Listener
+            //fab?.setOnClickListener { animateTest() }
 
         } else {
             fab?.startAnimation(fabClose)
+            bottom_app_bar?.startAnimation(fabFade)
             // Hide navigation drawer icon
             bottom_app_bar.navigationIcon = null
             // Move FAB from the center of BottomAppBar to the end of it
