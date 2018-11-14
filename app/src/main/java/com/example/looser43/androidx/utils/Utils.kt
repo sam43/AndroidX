@@ -1,8 +1,11 @@
 package com.example.looser43.androidx.utils
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.ViewAnimationUtils
+import com.example.looser43.androidx.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.analytics.FirebaseAnalytics
 
@@ -37,6 +40,16 @@ class Utils {
                     .start()
 
             //fabMenuOpen = !fabMenuOpen
+        }
+
+        fun setTheme(context: Context, theme: Int) {
+            val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+            prefs.edit().putInt(context.getString(R.string.prefs_theme_key), theme).apply()
+        }
+
+        fun getTheme(context: Context): Int {
+            val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+            return prefs.getInt(context.getString(R.string.prefs_theme_key), -1)
         }
 
     }

@@ -15,4 +15,7 @@
     <string name="toggle">Toggle</string>
     <string name="bottom_sheet_email">example@xmail.com</string>
     <string name="bottom_sheet_name">Nazifa Anis Mahin</string>
+    <string name="default_notification_channel_id">androidX_channel_id</string>
+    <string name="password">Password</string>
+    <string name="prefs_theme_key">theme</string>
 </resources>

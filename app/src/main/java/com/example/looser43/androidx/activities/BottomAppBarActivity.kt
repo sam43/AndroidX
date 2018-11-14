@@ -11,9 +11,12 @@ import com.example.looser43.androidx.R.drawable.*
 import com.example.looser43.androidx.R.menu.bottom_app_bar_secondary
 import com.example.looser43.androidx.R.menu.bottom_menu_search
 import com.example.looser43.androidx.fragments.BottomNavigationDrawerFragment
+import com.example.looser43.androidx.utils.getFCMtoken
+import com.example.looser43.androidx.utils.subscribeToFCMTopic
 import com.example.looser43.androidx.utils.toast
 import com.google.android.material.bottomappbar.BottomAppBar
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
+import kotlinx.android.synthetic.main.content_main.*
 
 
 class BottomAppBarActivity : AppCompatActivity() {
@@ -26,6 +29,8 @@ class BottomAppBarActivity : AppCompatActivity() {
     private lateinit var fabFadeO: Animation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getFCMtoken()
+        subscribeToFCMTopic("sayem")
         first = true
         setContentView(R.layout.activity_bottom_app_bar)
         fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_show)
