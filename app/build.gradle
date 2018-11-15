@@ -1,3 +1,5 @@
+import com.google.gms.googleservices.GoogleServicesPlugin
+
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'kotlin-android'
@@ -35,10 +37,15 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
+    //Android ShowcaseView
+    implementation 'com.github.deano2390:MaterialShowcaseView:1.2.0'
+
     // Firebase
     implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.6'
     //implementation 'com.google.firebase:firebase-perf:16.2.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
+    //implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     // Add the In-App Messaging dependency:
     implementation 'com.google.firebase:firebase-inappmessaging-display:17.0.4'
@@ -59,3 +66,4 @@ kotlin {
 }
 
 apply plugin: 'com.google.gms.google-services'
+GoogleServicesPlugin.config.disableVersionCheck = true

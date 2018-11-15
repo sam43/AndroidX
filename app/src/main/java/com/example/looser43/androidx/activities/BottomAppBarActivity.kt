@@ -12,11 +12,12 @@ import com.example.looser43.androidx.R.menu.bottom_app_bar_secondary
 import com.example.looser43.androidx.R.menu.bottom_menu_search
 import com.example.looser43.androidx.fragments.BottomNavigationDrawerFragment
 import com.example.looser43.androidx.utils.getFCMtoken
-import com.example.looser43.androidx.utils.subscribeToFCMTopic
 import com.example.looser43.androidx.utils.toast
 import com.google.android.material.bottomappbar.BottomAppBar
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
 import kotlinx.android.synthetic.main.content_main.*
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseSequence
+import uk.co.deanwild.materialshowcaseview.ShowcaseConfig
 
 
 class BottomAppBarActivity : AppCompatActivity() {
@@ -30,7 +31,7 @@ class BottomAppBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getFCMtoken()
-        subscribeToFCMTopic("sayem")
+        //subscribeToFCMTopic("sayem")
         first = true
         setContentView(R.layout.activity_bottom_app_bar)
         fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_show)
@@ -44,12 +45,35 @@ class BottomAppBarActivity : AppCompatActivity() {
         }
         if (first) {
             first = false
+            showTutorials()
             setupBottomNavigation()
             bottom_app_bar.setNavigationOnClickListener {
                 val bottomNavDrawerFragment = BottomNavigationDrawerFragment()
                 bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
             }
         }
+    }
+
+    private fun showTutorials() {
+        // sequence example
+        val config = ShowcaseConfig()
+        config.delay = 500 // half second between each showcase view
+
+        val sequence = MaterialShowcaseSequence(this, "s_1")
+
+        sequence.setConfig(config)
+
+        sequence.addSequenceItem(sw_toggle,
+                "This is button one", "GOT IT")
+
+        sequence.addSequenceItem(fab,
+                "This is button two", "GOT IT")
+
+        sequence.addSequenceItem(bottom_app_bar,
+                "This is button three", "GOT IT")
+
+        sequence.start()
+
     }
 
     private fun setupBottomNavigation() {
