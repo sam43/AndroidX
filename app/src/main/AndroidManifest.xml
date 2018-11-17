@@ -58,7 +58,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".activities.AuthActivity">
+        <activity android:name=".activities.AuthUIActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -22,6 +22,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -45,7 +50,6 @@ dependencies {
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.6'
     //implementation 'com.google.firebase:firebase-perf:16.2.0'
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
-    //implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     // Add the In-App Messaging dependency:
     implementation 'com.google.firebase:firebase-inappmessaging-display:17.0.4'

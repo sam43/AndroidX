@@ -76,6 +76,11 @@ class BottomAppBarActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        finish()
+        super.onBackPressed()
+    }
+
     private fun setupBottomNavigation() {
         if (!switched) {
             fab?.startAnimation(fabOpen)

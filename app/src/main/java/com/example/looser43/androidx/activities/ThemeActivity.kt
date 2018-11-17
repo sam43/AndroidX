@@ -1,5 +1,6 @@
 package com.example.looser43.androidx.activities
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
@@ -9,6 +10,7 @@ import com.example.looser43.androidx.R
 import com.example.looser43.androidx.utils.Utils
 
 
+@SuppressLint("Registered")
 open class ThemeActivity : AppCompatActivity() {
     companion object {
         const val THEME_BLUE = 1
