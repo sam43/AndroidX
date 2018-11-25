@@ -28,12 +28,14 @@ class BottomAppBarActivity : AppCompatActivity() {
     private lateinit var fabClose: Animation
     private lateinit var fabFade: Animation
     private lateinit var fabFadeO: Animation
+    private var thing: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getFCMtoken()
-        //subscribeToFCMTopic("sayem")
-        first = true
         setContentView(R.layout.activity_bottom_app_bar)
+        getFCMtoken()
+
+        first = true
         fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_show)
         fabClose = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_hide)
         fabFade = AnimationUtils.loadAnimation(applicationContext, android.R.anim.fade_in)

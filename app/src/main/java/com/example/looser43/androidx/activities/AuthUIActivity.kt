@@ -51,7 +51,8 @@ class AuthUIActivity : AppCompatActivity() {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
                 debug("user : ${user?.displayName} and email: ${user?.email}")
-                startActivity(Intent(this, BottomAppBarActivity::class.java))
+                startActivity(Intent(this@AuthUIActivity, BottomAppBarActivity::class.java))
+                finish()
             } else {
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check
